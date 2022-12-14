@@ -43,7 +43,7 @@ let sCardNum = 15;                         //最初に表示するカードの�
 let stopBtn = document.getElementById("stop");//ストップボタン
 let openBtn = document.getElementById("open");//ストップボタン
 const caColor = "rgb( 0, 127, 128)"          //背景色
-const cardImageFile = "img/card2.png";      //カード画像パス
+const cardImageFile = "img/cardImg.png";      //カード画像パス
 const caBackImgFile = "img/space.png";      //キャンバス背景画像URL
 
 //画像読み込み
@@ -398,11 +398,11 @@ function cardShow() {
 //カード裏面反転
 function cardRotate(){
     let openCardSrc = document.querySelector(".card-img-src");
-    openCardSrc.src = "./img/card2.png";
+    openCardSrc.src = "./img/cardImg.png";
     let timerId = setInterval(()=>{
         degree ++;
         if(degree > 160){
-            openCardSrc.src = "./img/card_a.png";
+            openCardSrc.src = "./img/openCard.png";
             openCardSrc.style.transform = 'rotateY(' + degree + 'deg)';
         }
         openCard.style.transform = 'rotateY(' + degree + 'deg)';
@@ -413,6 +413,7 @@ function cardRotate(){
     },1)
 }
 
+//カードをめくる処理
 function cut() {
     aniMoveYs();
     const sleep = ms => new Promise(resolve => setTimeout(resolve,ms))

@@ -240,7 +240,6 @@ function aniRotate() {
         draw_ca();
         gFlame++;
         gFlameRotate = gFlameRotate - 0.005;
-        // console.log(gFlameRotate);
     }, 10);
 }
 
@@ -250,7 +249,6 @@ function aniRotateS() {
     let timerId = setInterval(function () {
         draw_ca();
         gFlameRadius = gFlameRadius + 0.1;
-        console.log(gFlameRadius);
         if (gFlameRadius > 20) {
             clearInterval(timerId);
         }
@@ -263,7 +261,6 @@ function aniClose() {
     let timerId = setInterval(function () {
         drawOpen_ca();
         gFlameOpen = gFlameOpen - 0.01;
-        // console.log(gFlameOpen);
         if (gFlameOpen < -0.01) {
             clearInterval(timerId);
         }
@@ -405,8 +402,7 @@ function cardRotate(){
             openCardSrc.src = "./img/openCard.png";
             openCardSrc.style.transform = 'rotateY(' + degree + 'deg)';
         }
-        openCard.style.transform = 'rotateY(' + degree + 'deg)';
-        console.log(degree);
+        openCard.style.transform = 'rotateY(' + degree + 'deg)' ;
         if(degree > 180){
             clearInterval(timerId);
         }
